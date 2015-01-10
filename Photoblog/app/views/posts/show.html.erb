@@ -1,4 +1,7 @@
 <p>
-  <strong>Picture:</strong>
+  
   <%= image_tag(@post.picture_url, :width => 600) if @post.picture.present? %>
   </p>
+
+ <%= link_to 'Home', posts_path, class:'btn btn-mini btn-success' %>
+ <%= link_to 'Add More', new_post_path, class:'btn btn-mini btn-success' %>

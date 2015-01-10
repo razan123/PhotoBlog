@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150109114956) do
+ActiveRecord::Schema.define(:version => 20150109112955) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(:version => 20150109114956) do
     t.datetime "updated_at",  :null => false
     t.string   "picture"
     t.integer  "category_id"
-    t.string   "catatt"
   end
 
 end

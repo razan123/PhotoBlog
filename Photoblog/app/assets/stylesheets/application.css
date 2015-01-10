@@ -12,3 +12,16 @@
  *= require bootstrap.min
  *= require_tree .
  */
+.media-body {
+ padding: 30px;
+ width: 100%;
+ display: block !important;
+}
+
+table {
+	width: 100%;
+}
+
+.btn_holder {
+	text-align: center;
+}

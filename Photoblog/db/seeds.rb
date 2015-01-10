@@ -6,7 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
- categories=['Sports','Scenery','Potrait']
+ categories=['Sports','Scenery','Potrait', 'Others']
  categories.each do |category|
- 	Category.create(name: category)
+ 	unless Category.where(name: category).first
+ 		Category.create(name: category)
+ 	end
+
  end

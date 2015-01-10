@@ -1,17 +1,22 @@
 <%= form_for @post, :html => {:multipart => true} do |f| %>
   
-  <div class="field">
-    <%= f.label :picture %><br>
-    <%= f.file_field :picture %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
-<div class="category">
-  <%= f.collection_select :catatt, Category.all, :id, :name, 
-       :include_blank => true
+  <div class="upload">
+  <div class="category">
+  <%=f.label :category%>
+  <%= f.collection_select :category_id, Category.all, :id, :name, :include_blank => false
   %>
-  <%= f.submit "Create" %> </div>
+  </div>
+  <br>
+  <div class="field">
+     <%= f.file_field :picture %>
+ </div>
+ <br>
+ <div class="actions">
+   <%= f.submit "Upload Photo",  class: 'btn btn-mini btn-success' %>
+ </div>
+ </br>
+
+<%= link_to 'Back', posts_path , class: 'btn btn-mini btn-warning'%>
+ </div>
 <% end %> 
  
