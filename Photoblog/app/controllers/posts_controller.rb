@@ -13,7 +13,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Idea was successfully created.' }
+        format.html { redirect_to @post, notice: 'The picture was successfully uploaded.' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -24,6 +24,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find params[:id]
+    @comments = @post.comments.all
+    @comment = @post.comments.build
   end
 
   def destroy
